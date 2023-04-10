@@ -83,7 +83,9 @@ namespace JWT_token.Controllers
         {
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.Username)
+                new Claim(ClaimTypes.Name, user.Username),
+                // we can add role to be part of the token
+                new Claim(ClaimTypes.Role, "Admin")   //authorized user
             };
 
             // secret key that will be saved in environment cars
