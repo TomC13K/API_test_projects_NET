@@ -1,0 +1,22 @@
+DOMAIN
+ - Entities, Core business rules, Factory interfaces, Enumerations, Value objects, Custome exceptions ...
+ - domain layer NOT ALLOWED to reference any of the outer layers
+
+APPLICAITON
+- need to have the PROJECT REFERENCE to the domain layer right away
+- use cases for the application,  services, 
+		- [nugets ] MediatR, FluentValidation.DependencyInjectionExtension package (contains it all),
+
+INFRASTRUCTURE
+- addressing any external concerns 
+- external services , database
+	- sometimes split into INFRASTRUCTURE and PERSISTENCE layer
+		- Persistance will contain everything DB related
+
+PRESENTATION
+- controllers, minimal API endpoints, Razr pages ...
+
+WEB API (set it as startup project)
++ or can add separate folder for Web API parallel with the Presentation layer 
+- add references to all of the other projects in the solution (except domain that is already implicitly called by Application layer)
+	- logging in API --> Serilog.ASPNetCore
